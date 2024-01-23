@@ -79,9 +79,8 @@
   text-align: left;
   margin-bottom: 20px;
   font-size: var(--font-main);
-  color: var(--color-text-primary);
-  border-bottom: 1px solid var(--color-text-primary);
-  opacity: var(--opacity-1lvl);
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-text-secondary);
 }
 
 .hourly-data h2::after {

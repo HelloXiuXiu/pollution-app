@@ -175,8 +175,8 @@ const RatesInfo = memo(function RatesInfo ({ continent, onSetContinent }) {
   return (
     <div className="rates-info">
       <div className="rate-controls">
-        <button className={continent === 'Europe' ? 'active' : ''} data-event="Europe" onClick={handleButtonClick}>Europe</button>
-        <button className={continent === 'America' ? 'active' : ''} data-event="America" onClick={handleButtonClick}>America</button>
+        <button className={continent === 'Europe' ? 'active' : ''} data-event="Europe" onClick={handleButtonClick} name="continent-switch-europe">Europe</button>
+        <button className={continent === 'America' ? 'active' : ''} data-event="America" onClick={handleButtonClick} name="continent-switch-america">America</button>
       </div>
       <div ref={listWrapper}>
         <RatesList
