@@ -72,7 +72,7 @@ const HourlyData = memo(function HourlyData ({ data }) {
   return (
     <div className="hourly-data">
       <div className="hourly-controls">
-        <button className="hourly-info" onClick={() => setInfoOpen(state => !state)} name="info">i</button>
+        <button className="hourly-info" onClick={() => setInfoOpen(state => !state)} aria-label="info">i</button>
         { infoOpen &&
           <PopUp wrapperClass="info-popup" setIsOpen={setInfoOpen}>
             <p>Hourly data shows a list of variables for each pollutant over the last 16 hours. The more the square is filled, the more polluted the air.
@@ -94,7 +94,7 @@ const HourlyData = memo(function HourlyData ({ data }) {
             className={activeObj[el.arrName] === 'true' ? 'active' : ''}
             data-event={el.arrName}
             onClick={(e) => handleButton(e)}
-            name={el.title}>
+            aria-label={el.title}>
             { el.title.split(' ').slice(-1)[0].split('/').join('') }
           </button>
         ))}

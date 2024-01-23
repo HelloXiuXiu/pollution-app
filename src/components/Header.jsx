@@ -8,7 +8,7 @@ const Header = memo(function Header ({ index, image }) {
   return (
     <header className={'header ' + image}>
       <h1 className="index">{index}</h1>
-      <button className="contribution-button" onClick={() => setContributionOpen(state => !state)} name="contribution"></button>
+      <button className="contribution-button" onClick={() => setContributionOpen(state => !state)} aria-label="contribution"></button>
       { contributionOpen &&
         <PopUp wrapperClass="contribution-popup" setIsOpen={setContributionOpen}>
           <p>
