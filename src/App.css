@@ -32,11 +32,11 @@ body::after {
   height: 0;
   z-index: -1;
   overflow: hidden;
-  content: url('/src/assets/images/city-green.jpg')
-           url('/src/assets/images/city-red.jpg')
-           url('/src/assets/images/lake.jpg')
-           url('/src/assets/images/steam.jpg')
-           url('/src/assets/images/stone.jpg');
+  content: url('/src/assets/images/city-green.webp')
+           url('/src/assets/images/city-red.webp')
+           url('/src/assets/images/lake.webp')
+           url('/src/assets/images/steam.webp')
+           url('/src/assets/images/stone.webp');
 }
 
 h1, h2, h3, h4 {

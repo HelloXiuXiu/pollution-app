@@ -6,7 +6,7 @@ header {
   padding: var(--padding);
   background-size: cover;
   background-position: center center;
-  background-image: url('../assets/images/stone.jpg');
+  background-image: url('../assets/images/stone.webp');
   height: 0;
   opacity: 0;
   min-height: 0;
@@ -23,24 +23,24 @@ header {
 }
 
 header.good {
-  background-image: url('../assets/images/lake.jpg');
+  background-image: url('../assets/images/lake.webp');
 }
 
 header.fair {
-  background-image: url('../assets/images/stone.jpg');
+  background-image: url('../assets/images/stone.webp');
 }
 
 header.moderate {
-  background-image: url('../assets/images/steam.jpg');
+  background-image: url('../assets/images/steam.webp');
 }
 
 header.poor {
-  background-image: url('../assets/images/city-green.jpg');
+  background-image: url('../assets/images/city-green.webp');
 }
 
 header.very-poor,
 header.extremely-poor {
-  background-image: url('../assets/images/city-red.jpg');
+  background-image: url('../assets/images/city-red.webp');
 }
 
 header .index {
