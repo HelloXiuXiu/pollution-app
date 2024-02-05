@@ -6,7 +6,7 @@ import CurrentQualityRate from './CurrentQualityRate.jsx'
 import RatesInfo from './RatesInfo.jsx'
 import HourlyData from './HourlyData.jsx'
 
-const Main = memo(function Main ({ continent, onSetContinent, airQuality, data }) {
+const Main = memo(function Main ({ continent, onSetContinent, airQuality, data, key }) {
   const [isHourlyOpen, setIsHourlyOpen] = useState(false)
   const [isRatesOpen, setIsRatesOpen] = useState(false)
 
@@ -22,7 +22,7 @@ const Main = memo(function Main ({ continent, onSetContinent, airQuality, data }
         <RatesInfo continent={continent} onSetContinent={onSetContinent} />
       }
       { isHourlyOpen &&
-        <HourlyData data={data} />
+        <HourlyData data={data} key={key} />
       }
     </main>
   )

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, memo } from 'react'
+import { useState, useRef, useLayoutEffect, useCallback, memo } from 'react'
 import { useWindowSize } from '../hooks/useWindowSize.js'
 import { useAnimateList } from '../hooks/useAnimateList.js'
 import PopUp from './PopUp.jsx'
@@ -50,6 +50,10 @@ const HourlyData = memo(function HourlyData ({ data }) {
     so2: 'false',
     co: 'false'
   })
+
+  useLayoutEffect(() => {
+    setK(Math.random().toString(10).slice(2))
+  }, [data])
 
   function handleButton (e) {
     const targ = e.target.closest('[data-event]')
@@ -114,6 +118,7 @@ const HourlyList = memo(function HourlyList ({ data, activeObj }) {
 
   const pollutantArrays = {}
   let currentHour = 0
+  let dataArray = []
 
   useAnimateList('.load-hourly')
 
@@ -199,7 +204,7 @@ const Canvas = memo(function Canvas ({ percentage, columns }) {
       : windowWidth > 420 ? Math.ceil(columns / 3)
         : Math.ceil(columns / 4)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     paddings = getComputedStyle(document.querySelector('main')).padding.split('px').join('') * 2
     containerWidth = (document.body.offsetWidth - paddings - 10 * (responsiveColumns - 1)) / responsiveColumns // 10px gap
   }, [])
@@ -212,7 +217,7 @@ const Canvas = memo(function Canvas ({ percentage, columns }) {
   let circleGap
   let rows
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     paddings = getComputedStyle(document.querySelector('main')).padding.split('px').join('') * 2
     containerWidth = ((windowWidth - paddings - 10 * (responsiveColumns - 1)) / responsiveColumns)// 10px gap
 
@@ -250,7 +255,7 @@ const Canvas = memo(function Canvas ({ percentage, columns }) {
     canvas.height = containerWidth * resolution
 
     drawCircles(canvas, percentage)
-  }, [windowWidth])
+  }, [windowWidth, percentage])
 
   return (
     <canvas
