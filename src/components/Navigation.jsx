@@ -15,12 +15,12 @@ const Navigation = memo(function Navigation ({ isRatesOpen, onSetIsRatesOpen, is
   return (
     <nav>
       <p
-        className={`hourly${isHourlyOpen ? ' active' : isRatesOpen ? ' wait' : ''}`}
+        className={`nav-item hourly${isHourlyOpen ? ' active' : isRatesOpen ? ' wait' : ''}`}
         onClick={hourlyClick}>
         hourly data
       </p>
       <p
-        className={`rates${isRatesOpen ? ' active' : isHourlyOpen ? ' wait' : ''}`}
+        className={`nav-item rates${isRatesOpen ? ' active' : isHourlyOpen ? ' wait' : ''}`}
         onClick={ratesClick}>
         pollution rates
       </p>

@@ -79,11 +79,12 @@ const HourlyData = memo(function HourlyData ({ data }) {
         <button className="hourly-info" onClick={() => setInfoOpen(state => !state)} aria-label="info">i</button>
         { infoOpen &&
           <PopUp wrapperClass="info-popup" setIsOpen={setInfoOpen}>
-            <p>Hourly data shows a list of variables for each pollutant over the last 16 hours. The more the square is filled, the more polluted the air.
+            <p className="info-subtext">Hourly data shows a list of variables for each pollutant over the last 16 hours. The more the square is filled, the more polluted the air.
             <br /><br />A square filled to 100% means that the air is unhealthy and the level of pollution exceeds:</p>
             <ul className="max-rates">
               { polutants.map((el) => (
                 <li
+                  className="rate"
                   key={el.arrName}>
                   <p>{ el.title.split(' ').slice(-1)[0].split('/').map((el, ind) => ind === 0 ? el : <sub key={ind}>{el}</sub>) }</p>
                   <p>≥ {el.max} μg/m³</p>
@@ -95,7 +96,7 @@ const HourlyData = memo(function HourlyData ({ data }) {
         { polutants.map((el, ind) => (
           <button
             key={el.title}
-            className={activeObj[el.arrName] === 'true' ? 'active' : ''}
+            className={activeObj[el.arrName] === 'true' ? 'active switch-button' : 'switch-button'}
             data-event={el.arrName}
             onClick={(e) => handleButton(e)}
             aria-label={el.title}>
@@ -141,7 +142,7 @@ const HourlyList = memo(function HourlyList ({ data, activeObj }) {
       const isNull = data[i] === null
 
       arr.push(
-        <li key={i}>
+        <li className="hourly-list-item" key={i}>
           <span className="hour">{ hour + ':00'}</span>
           { isNull && <div className="no-data">no data</div> }
           <Canvas
@@ -181,6 +182,7 @@ const HourlyList = memo(function HourlyList ({ data, activeObj }) {
       { polutants.map((el, ind) => (
         activeObj[el.arrName] === 'true' &&
           <li
+            className="hourly-row"
             key={el.arrName}>
             <h2>{el.title.split('/').map((el, ind) => ind === 0 ? el : <sub key={ind}>{el}</sub>)}</h2>
             <ul className="hourly-list">{generateColumns(el.arrName)}</ul>

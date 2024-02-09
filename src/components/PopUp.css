@@ -57,13 +57,13 @@
   cursor: pointer;
 }
 
-.popup .popup-close svg {
+.popup .popup-close .popup-close-svg {
   color: inherit;
   transition: color 0.4s;
 }
 
 @media (hover: hover) {
-  .popup .popup-close:hover svg {
+  .popup .popup-close:hover .popup-close-svg {
     transition: color 0.4s;
     color: var(--color-text-primary);
   }

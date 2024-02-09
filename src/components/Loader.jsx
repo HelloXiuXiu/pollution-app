@@ -4,9 +4,9 @@ export default function Loader ({ loadStatus }) {
   return (
     <p className="loader">
       { loadStatus }
-      <span>.</span>
-      <span>.</span>
-      <span>.</span>
+      <span className="dot">.</span>
+      <span className="dot">.</span>
+      <span className="dot">.</span>
     </p>
   )
 }

@@ -137,17 +137,17 @@ button.contribution-button:hover::before {
   opacity: var(--opacity-text);
 }
 
-.contribution-popup .contribution ~ h2 {
+.contribution-popup .subheading {
   opacity: var(--opacity-2lvl) !important;
   font-size: var(--font-main);
   margin-bottom: 5px;
 }
 
-.contribution-popup .contribution ~ p {
+.contribution-popup .contribution-subtext {
   margin-bottom: 40px;
 }
 
-.contribution-popup .contribution ~ p:last-of-type {
+.contribution-popup .contribution ~ .contribution-subtext:last-of-type {
   margin-bottom: 0;
 }
 

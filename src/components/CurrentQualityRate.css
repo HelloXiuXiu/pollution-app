@@ -14,7 +14,7 @@
   animation-delay: var(--anim-duration-slow);
 }
 
-.current-air-quality span {
+.current-air-quality .small {
   display: block;
   margin-top: 12px;
   font-size: var(--font-main);

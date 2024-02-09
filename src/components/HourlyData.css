@@ -9,17 +9,18 @@
   flex-wrap: wrap;
 }
 
-.hourly-controls button {
+.hourly-controls .switch-button,
+.hourly-controls .hourly-info {
   position: relative;
   opacity: var(--opacity-2lvl);
 }
 
-.hourly-controls button.active {
+.hourly-controls .switch-button.active {
   opacity: var(--opacity-1lvl);
 }
 
 @media (hover: hover) {
-  .hourly-controls button:hover {
+  .hourly-controls .switch-button:hover {
     opacity: var(--opacity-1lvl);
   }
 }
@@ -28,7 +29,7 @@
   opacity: 0.1;
 }
 
-.hourly-controls button.hourly-info {
+.hourly-controls .hourly-info {
   margin-right: auto;
 }
 
@@ -41,7 +42,7 @@
   padding: 28px 24px 14px 24px;
 }
 
-.info-popup > p {
+.info-popup .info-subtext {
   opacity: var(--opacity-text);
 }
 
@@ -49,7 +50,7 @@
   margin-top: 24px;
 }
 
-.info-popup .max-rates li {
+.info-popup .rate {
   display: flex;
   justify-content: space-between;
   margin-bottom: 11px;
@@ -60,14 +61,6 @@
   top: 14px;
   right: 14px;
   cursor: pointer;
-}
-
-.info-popup .info-close svg {
-  color: var(--color-text-secondary);
-}
-
-.info-popup .info-close:hover svg {
-  color: var(--color-text-primary);
 }
 
 .hourly-data > ul > li {
@@ -104,7 +97,7 @@ ul.hourly-list {
   margin-bottom: 34px;
 }
 
-.hourly-list li {
+.hourly-list .hourly-list-item {
   position: relative;
   width: 100%;
   height: auto;
@@ -113,7 +106,7 @@ ul.hourly-list {
   text-align: left;
 }
 
-.hourly-list li .no-data {
+.hourly-list-item .no-data {
   position: absolute;
   top: 0px;
   left: 0;
@@ -121,7 +114,7 @@ ul.hourly-list {
   opacity: var(--opacity-1lvl);
 }
 
-.hourly-list li span.polutant-value {
+.hourly-list-item .polutant-value {
   font-size: var(--font-small);
   color: var(--color-text-secondary);
   margin-top: 6px;
@@ -129,12 +122,12 @@ ul.hourly-list {
   text-wrap: nowrap;
 }
 
-.hourly-list li:hover > span {
+.hourly-list-item:hover > span {
   color: var(--color-text-primary);
   opacity: 1;
 }
 
-.hourly-list li .hour {
+.hourly-list-item .hour {
   position: absolute;
   top: -20px;
   left: 0px;
@@ -142,7 +135,7 @@ ul.hourly-list {
   color: var(--color-text-secondary);
 }
 
-.hourly-list li .circle {
+.hourly-list-item .circle {
   width: 3px;
   height: 3px;
   background-color: var(--color-text-secondary);
@@ -151,7 +144,7 @@ ul.hourly-list {
 
 /* animation */
 
-.load-hourly > li {
+.load-hourly .hourly-row {
   opacity: 0;
   animation-name: load-hourly;
   animation-iteration-count: 1;

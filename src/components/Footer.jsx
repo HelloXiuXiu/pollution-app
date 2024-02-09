@@ -8,7 +8,7 @@ const Footer = memo(function Footer ({ location, onSetLocation, onGetAirData }) 
         <div className="location">
           <Input location={location} onSetLocation={onSetLocation} onGetAirData={onGetAirData}/>
           <br />
-          <span>location</span>
+          <span className="small">location</span>
         </div>
     </footer>
   )

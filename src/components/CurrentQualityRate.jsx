@@ -5,7 +5,7 @@ const CurrentQualityRate = memo(function CurrentQualityRate ({ airQuality }) {
   return (
     <h2 className="current-air-quality">
       {airQuality}
-      <span>current air pollution index</span>
+      <span className="small">current air pollution index</span>
     </h2>
   )
 })

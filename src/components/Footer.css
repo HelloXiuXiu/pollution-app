@@ -19,7 +19,7 @@ footer {
   display: inline;
 }
 
-.location span {
+.location .small {
   user-select: none;
   color: var(--color-text-secondary);
 }

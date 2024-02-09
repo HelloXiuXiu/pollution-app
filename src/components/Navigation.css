@@ -3,18 +3,18 @@ nav {
   justify-content: space-between;
 }
 
-nav p {
+nav .nav-item {
   position: relative;
   cursor: pointer;
   user-select: none;
   opacity: 0;
 }
 
-nav p.wait {
+nav .nav-item.wait {
   opacity: var(--opacity-2lvl) !important;
 }
 
-nav p::before {
+nav .nav-item::before {
   content: ' ';
   position: absolute;
   top: -2px;
@@ -27,11 +27,11 @@ nav p::before {
 }
 
 @media (hover: hover) {
-  nav p:hover {
+  nav .nav-item:hover {
     opacity: var(--opacity-1lvl);
   }
 
-  nav p:hover::before {
+  nav .nav-item:hover::before {
     opacity: 1;
   }
 }
@@ -62,11 +62,11 @@ nav p::before {
 }
 
 @media (max-width: 420px) {
-  nav p {
+  nav .nav-item {
     opacity: var(--opacity-1lvl) !important;
   }
 
-  nav p.active {
+  nav .nav-item.active {
     opacity: 1 !important;
   }
 }

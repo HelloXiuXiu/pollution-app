@@ -9,30 +9,29 @@
   text-align: right;
 }
 
-.rate-controls button {
+.rate-controls .switch-button {
   opacity: var(--opacity-2lvl);
 }
 
-.rate-controls button.active {
+.rate-controls .switch-button.active {
   pointer-events: none;
 }
 
-.rate-controls button.active {
+.rate-controls .switch-button.active {
   opacity: var(--opacity-1lvl);
 }
 
 @media (hover: hover) {
-  .rate-controls button:hover {
+  .rate-controls .switch-button:hover {
     opacity: var(--opacity-1lvl);
   }
 }
 
-.rates-info ul li {
+.list-data li {
   margin-bottom: 13px;
-  list-style: none;
 }
 
-.rates-info ul li:not(.header):not(.links)::after {
+.list-data li:not(.header):not(.links)::after {
   position: absolute;
   left: 0;
   bottom: -2px;
@@ -42,7 +41,7 @@
   background-color: var(--color-text-primary);
 }
 
-.rates-info .rates-grid {
+.list-data .rates-grid {
   display: grid;
   grid-template-columns: 1fr repeat(6, 80px) 1fr;
   gap: 4%;
@@ -52,7 +51,7 @@
   display: none;
 }
 
-.rates-info li.header {
+.list-data li.header {
   border-bottom: none;
   margin-top: 12px;
   grid-template-columns: 1fr repeat(6, 120px) 1fr;
@@ -63,34 +62,34 @@ li.rates-grid.header ~ li.rates-grid {
   margin-top: 80px;
 }
 
-.rates-info li.header p,
-.rates-info ul li.links p {
+.list-data li.header p,
+.list-data li.links p {
   opacity: var(--opacity-1lvl);
 }
 
-.rates-info li.header p:last-child,
-.rates-info li.header p:first-child {
+.list-data li.header p:last-child,
+.list-data li.header p:first-child {
   opacity: 0 !important;
 }
 
-.rates-info ul li:not(.header):not(.links) p {
+.list-data li:not(.header):not(.links) p {
   user-select: none;
   white-space: nowrap;
 }
 
-.rates-info ul li p:first-child {
+.list-data li p:first-child {
   text-align: left;
 }
 
-.rates-info ul li p:last-child {
+.list-data li p:last-child {
   text-align: right;
 }
 
-.rates-info ul li.links {
+.list-data li.links {
   border-bottom: none;
 }
 
-.rates-info ul li.links p {
+.list-data li.links p {
   text-align: center;
 }
 
@@ -128,17 +127,17 @@ li.rates-grid.header ~ li.rates-grid {
   pointer-events: none;
 }
 
-.rates-info ul li:not(.header):not(.links):hover {
+.list-data li:not(.header):not(.links):hover {
   opacity: 1 !important;
 }
 
 @media (max-width: 1200px) {
-  .rates-info ul li {
+  .list-data li {
     margin-bottom: 24px;
   }
 
-  .rates-info .rates-grid,
-  .rates-info li.header {
+  .list-data .rates-grid,
+  .list-data li.header {
     grid-template-columns: 50px repeat(4, 1fr) 80px;
     row-gap: 12px;
     column-gap: 5px;
@@ -184,17 +183,17 @@ li.rates-grid.header ~ li.rates-grid {
     margin-top: 110px;
   }
 
-  .rates-info .rates-grid {
+  .list-data .rates-grid {
     gap: 8px;
     grid-template-columns: 1fr 1fr;
   }
 
-  .rates-info ul li:not(.header):not(.links)::after {
+  .list-data li:not(.header):not(.links)::after {
     bottom: unset;
     top: 17px;
   }
 
-  .rates-info li.header {
+  .list-data li.header {
     display: none;
   }
 
@@ -239,7 +238,7 @@ li.rates-grid.header ~ li.rates-grid {
     display: none;
   }
 
-  .rates-grid p .mobile {
+  .rates-grid .mobile {
     display: inline-block;
     margin-left: auto;
     opacity: var(--opacity-1lvl);
