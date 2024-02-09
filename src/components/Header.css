@@ -22,25 +22,43 @@ header {
   will-change: transform, background-image;
 }
 
-header.good {
+header.good,
+.header-image.good {
   background-image: url('../assets/images/lake.webp');
 }
 
-header.fair {
+header.fair,
+.header-image.fair {
   background-image: url('../assets/images/stone.webp');
 }
 
-header.moderate {
+header.moderate,
+.header-image.moderate {
   background-image: url('../assets/images/steam.webp');
 }
 
-header.poor {
+header.poor,
+.header-image.poor {
   background-image: url('../assets/images/city-green.webp');
 }
 
 header.very-poor,
-header.extremely-poor {
+header.extremely-poor,
+.header-image.very-poor,
+.header-image.extremely-poor {
   background-image: url('../assets/images/city-red.webp');
+}
+
+.header-image {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  transition: opacity 1s;
 }
 
 header .index {
@@ -52,6 +70,7 @@ header .index {
   animation-duration: var(--anim-duration-slow);
   animation-timing-function: var(--anim-easing);
   animation-delay: var(--anim-duration);
+  z-index: 2;
 }
 
 @keyframes slidedown {

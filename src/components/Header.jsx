@@ -1,12 +1,28 @@
-import { memo, useState } from 'react'
+import { memo, useState, useRef, useLayoutEffect } from 'react'
 import PopUp from './PopUp.jsx'
 import './Header.css'
 
 const Header = memo(function Header ({ index, image }) {
   const [contributionOpen, setContributionOpen] = useState(false)
+  const [prevImage, setPrevImage] = useState('')
+
+  const imageWrapper = useRef(null)
+  
+  useLayoutEffect(() => {
+    if (!prevImage) setPrevImage(image)
+
+    if (image !== prevImage && prevImage) {
+      imageWrapper.current.style.opacity = '0'
+      imageWrapper.current.addEventListener('transitionend', () => {
+        setPrevImage(image)
+        imageWrapper.current.style.opacity = '1'
+      })
+    } 
+  }, [image])
 
   return (
     <header className={'header ' + image}>
+      <div ref={imageWrapper} className={'header-image ' + prevImage}></div>
       <h1 className="index">{index}</h1>
       <button className="contribution-button" onClick={() => setContributionOpen(state => !state)} aria-label="contribution"></button>
       { contributionOpen &&
