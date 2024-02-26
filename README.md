@@ -2,6 +2,7 @@
 The Application shows the current air quality index along with
 hourly rates for each pollutant.
 <br>
+
 This is a web version of the application. The Native App is build with [Socket runtime.](https://socketsupply.co/)
 <br>
 <br>
@@ -13,3 +14,5 @@ npm i
 npm run dev
 ```
 <br>
+
+Online: [air-pollution.xyz](https://air-pollution.xyz/)
