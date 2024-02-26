@@ -13,8 +13,6 @@ npm i
 npm run dev
 ```
 <br>
-
-Native version: [https://github.com/HelloXiuXiu/pollution-app-native](https://github.com/HelloXiuXiu/pollution-app-native/)
+Native version: [pollution-app-native](https://github.com/HelloXiuXiu/pollution-app-native/)
 <br>
-
 Online: [air-pollution.xyz](https://air-pollution.xyz/)
