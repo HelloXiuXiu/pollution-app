@@ -19,4 +19,4 @@ npm run dev
 
 Native version: [pollution-app-native](https://github.com/HelloXiuXiu/pollution-app-native/) <br>
 Online: [air-pollution.xyz](https://air-pollution.xyz/) <br>
-Tutorial: [YouTube](https://youtu.be/tLvwK0o8ttg?si=AfZpDlkdxKRIBv5r)
+How to build a native app from this project (tutorial): [YouTube](https://youtu.be/tLvwK0o8ttg?si=AfZpDlkdxKRIBv5r)
