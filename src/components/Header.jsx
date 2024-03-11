@@ -16,7 +16,7 @@ const Header = memo(function Header ({ index, image }) {
       imageWrapper.current.addEventListener('transitionend', () => {
         setPrevImage(image)
         imageWrapper.current.style.opacity = '1'
-      })
+      }, { once: true })
     }
   }, [image])
 
