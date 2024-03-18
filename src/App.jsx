@@ -27,8 +27,16 @@ function App () {
   const [continent, setContinent] = useState('')
 
   useEffect(() => {
+    // const ifStillLoading = setTimeout(() => {
+    //   if (isLoading) {
+    //     getAirData(40.71, -74.01)
+    //   }
+
+    // }, 5000)
+
     setLoadStatus('Looking for the nearest location')
     if (!navigator.geolocation) {
+      getAirData(40.71, -74.01)
       return setError('Your browser does not support geolocation.')
     }
 
@@ -36,6 +44,8 @@ function App () {
       getAirData(pos.coords.latitude, pos.coords.longitude)
     })
     // getAirData(44.85, 20.45)
+
+    // return () => clearTimeout(ifStillLoading)
   }, [])
 
   // get pollution data
