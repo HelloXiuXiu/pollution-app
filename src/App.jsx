@@ -27,13 +27,7 @@ function App () {
   const [continent, setContinent] = useState('')
 
   useEffect(() => {
-    // const ifStillLoading = setTimeout(() => {
-    //   if (isLoading) {
-    //     getAirData(40.71, -74.01)
-    //   }
-
-    // }, 5000)
-
+    let timer;
     setLoadStatus('Looking for the nearest location')
     if (!navigator.geolocation) {
       getAirData(40.71, -74.01)
@@ -42,10 +36,16 @@ function App () {
 
     navigator.geolocation.getCurrentPosition(pos => {
       getAirData(pos.coords.latitude, pos.coords.longitude)
+      // getAirData(44.85, 20.45)
+    }, (error) => {
+      console.error(error)
+      setLoadStatus("Geolocation is not found. Setting a default location (New York) in 3s")
+      timer = setTimeout(() => getAirData(40.71, -74.01), 3000)
+    }, {
+      timeout: 5000
     })
-    // getAirData(44.85, 20.45)
 
-    // return () => clearTimeout(ifStillLoading)
+    return () => { if (timer) clearTimeout(timer) }
   }, [])
 
   // get pollution data
