@@ -38,7 +38,6 @@ function App () {
       getAirData(pos.coords.latitude, pos.coords.longitude)
       // getAirData(44.85, 20.45)
     }, (error) => {
-      console.error(error)
       setLoadStatus("Geolocation is not found. Setting a default location (New York)")
       getAirData(40.71, -74.01)
     }, {
