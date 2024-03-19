@@ -27,7 +27,7 @@ function App () {
   const [continent, setContinent] = useState('')
 
   useEffect(() => {
-    let timer;
+    let timer
     setLoadStatus('Looking for the nearest location')
     if (!navigator.geolocation) {
       getAirData(40.71, -74.01)
@@ -39,13 +39,11 @@ function App () {
       // getAirData(44.85, 20.45)
     }, (error) => {
       console.error(error)
-      setLoadStatus("Geolocation is not found. Setting a default location (New York) in 3s")
-      timer = setTimeout(() => getAirData(40.71, -74.01), 3000)
+      setLoadStatus("Geolocation is not found. Setting a default location (New York)")
+      getAirData(40.71, -74.01)
     }, {
-      timeout: 5000
+      timeout: 10000
     })
-
-    return () => { if (timer) clearTimeout(timer) }
   }, [])
 
   // get pollution data
