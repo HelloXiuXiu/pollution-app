@@ -19,12 +19,6 @@
   opacity: var(--opacity-1lvl);
 }
 
-@media (hover: hover) {
-  .hourly-controls .switch-button:hover {
-    opacity: var(--opacity-1lvl);
-  }
-}
-
 .hourly-controls button[disabled] {
   opacity: 0.1;
 }
@@ -122,11 +116,6 @@ ul.hourly-list {
   text-wrap: nowrap;
 }
 
-.hourly-list-item:hover > span {
-  color: var(--color-text-primary);
-  opacity: 1;
-}
-
 .hourly-list-item .hour {
   position: absolute;
   top: -20px;
@@ -140,6 +129,17 @@ ul.hourly-list {
   height: 3px;
   background-color: var(--color-text-secondary);
   border-radius: 50%;
+}
+
+@media (hover: hover) {
+  .hourly-controls .switch-button:hover {
+    opacity: var(--opacity-1lvl);
+  }
+
+  .hourly-list-item:hover > span {
+    color: var(--color-text-primary);
+    opacity: 1;
+  }
 }
 
 /* animation */
