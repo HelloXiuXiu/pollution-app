@@ -121,7 +121,9 @@ button.contribution-button:hover::before {
   top: 20px;
   right: 26px;
   width: 500px;
+  max-height: calc(100vh - 90px);
   padding: 34px 28px;
+  overflow: auto;
   letter-spacing: 0.14px;
   transition: all .4s;
 }

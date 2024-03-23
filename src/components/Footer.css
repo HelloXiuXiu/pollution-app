@@ -23,3 +23,9 @@ footer {
   user-select: none;
   color: var(--color-text-secondary);
 }
+
+@media (max-width: 420px) {
+  footer {
+    padding-bottom: 40px;
+  }
+}
